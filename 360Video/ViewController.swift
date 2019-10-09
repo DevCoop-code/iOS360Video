@@ -11,11 +11,13 @@ import GLKit
 
 class ViewController: GLKViewController {
     var renderer: Renderer?
+    var videoPlayer: VideoPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupRenderer()
+        setupVideoPlayer()
         
         delegate = self
     }
@@ -30,6 +32,14 @@ class ViewController: GLKViewController {
             let model = Sphere()
             
             renderer = Renderer(context: context, shader: shader, model: model)
+        }
+    }
+    
+    private func setupVideoPlayer() {
+        if let path = Bundle.main.path(forResource: "360_VR Master Series _ London On Tower Bridge_1080p", ofType: "mp4"){
+            let url = URL(fileURLWithPath: path)
+            videoPlayer = VideoPlayer(url: url, framesPerSecond:framesPerSecond)
+            videoPlayer?.play()
         }
     }
     

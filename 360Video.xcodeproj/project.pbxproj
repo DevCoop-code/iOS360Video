@@ -22,6 +22,8 @@
 		7809C825234DAC52009F980E /* Shader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C824234DAC52009F980E /* Shader.swift */; };
 		7809C827234DB6FC009F980E /* GLProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C826234DB6FC009F980E /* GLProgram.swift */; };
 		7809C82A234DBB79009F980E /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C829234DBB79009F980E /* Renderer.swift */; };
+		7809C82D234DD5AB009F980E /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C82C234DD5AB009F980E /* VideoPlayer.swift */; };
+		7809C830234DD7C0009F980E /* 360_VR Master Series _ London On Tower Bridge_1080p.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7809C82F234DD7C0009F980E /* 360_VR Master Series _ London On Tower Bridge_1080p.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		7809C824234DAC52009F980E /* Shader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shader.swift; sourceTree = "<group>"; };
 		7809C826234DB6FC009F980E /* GLProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProgram.swift; sourceTree = "<group>"; };
 		7809C829234DBB79009F980E /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		7809C82C234DD5AB009F980E /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		7809C82F234DD7C0009F980E /* 360_VR Master Series _ London On Tower Bridge_1080p.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "360_VR Master Series _ London On Tower Bridge_1080p.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		7809C7F2234D9D5D009F980E /* 360Video */ = {
 			isa = PBXGroup;
 			children = (
+				7809C82E234DD76D009F980E /* Resource */,
+				7809C82B234DD599009F980E /* MediaPlayer */,
 				7809C828234DBB62009F980E /* Render */,
 				7809C81F234DA75E009F980E /* Model */,
 				7809C81A234DA5CD009F980E /* Extension */,
@@ -157,6 +163,22 @@
 				7809C829234DBB79009F980E /* Renderer.swift */,
 			);
 			path = Render;
+			sourceTree = "<group>";
+		};
+		7809C82B234DD599009F980E /* MediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				7809C82C234DD5AB009F980E /* VideoPlayer.swift */,
+			);
+			path = MediaPlayer;
+			sourceTree = "<group>";
+		};
+		7809C82E234DD76D009F980E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7809C82F234DD7C0009F980E /* 360_VR Master Series _ London On Tower Bridge_1080p.mp4 */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7809C819234DA56B009F980E /* fragmentShader.glsl in Resources */,
+				7809C830234DD7C0009F980E /* 360_VR Master Series _ London On Tower Bridge_1080p.mp4 in Resources */,
 				7809C800234D9D5F009F980E /* LaunchScreen.storyboard in Resources */,
 				7809C7FD234D9D5F009F980E /* Assets.xcassets in Resources */,
 				7809C817234DA4C4009F980E /* vertexShader.glsl in Resources */,
@@ -269,6 +292,7 @@
 				7809C7F4234D9D5D009F980E /* AppDelegate.swift in Sources */,
 				7809C81C234DA602009F980E /* GLKMatrix4+Conversions.swift in Sources */,
 				7809C827234DB6FC009F980E /* GLProgram.swift in Sources */,
+				7809C82D234DD5AB009F980E /* VideoPlayer.swift in Sources */,
 				7809C7F6234D9D5D009F980E /* SceneDelegate.swift in Sources */,
 				7809C82A234DBB79009F980E /* Renderer.swift in Sources */,
 				7809C823234DA831009F980E /* esShapes.c in Sources */,
