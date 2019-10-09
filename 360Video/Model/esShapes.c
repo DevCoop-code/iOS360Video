@@ -63,7 +63,7 @@
 ///         if it is not NULL ) as a GL_TRIANGLE_STRIP
 //
 int esGenSphere ( int numSlices, float radius, GLfloat **vertices,
-                            GLfloat **texCoords, GLfloat **indices )
+                            GLfloat **texCoords, GLushort **indices )
 {
   int numParallels = numSlices / 2;
   int numVertices = (numParallels + 1) * (numSlices + 1);
@@ -118,4 +118,3 @@ int esGenSphere ( int numSlices, float radius, GLfloat **vertices,
 
   return numIndices;
 }
-

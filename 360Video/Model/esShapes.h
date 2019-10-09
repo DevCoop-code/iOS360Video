@@ -34,12 +34,14 @@
 //    Utility functions for generating shapes
 //
 
-#ifndef esShapes_h
-#define esShapes_h
+
+#ifndef Model_h
+#define Model_h
 
 #include <stdio.h>
 #include <OpenGLES/gltypes.h>
 
-int esGenSphere(int numSlices, float radius, GLfloat **vertices, GLfloat **texCoords, GLfloat **indices);
+int esGenSphere ( int numSlices, float radius, GLfloat **vertices,
+                 GLfloat **texCoords, GLushort **indices );
 
-#endif /* esShapes_h */
+#endif /* Model_h */

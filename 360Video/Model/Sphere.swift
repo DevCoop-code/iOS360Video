@@ -11,7 +11,7 @@ import GLKit
 class Sphere {
     var vertices: UnsafeMutablePointer<GLfloat>?
     var texCoords: UnsafeMutablePointer<GLfloat>?
-    var indices: UnsafeMutablePointer<GLfloat>?
+    var indices: UnsafeMutablePointer<GLushort>?
     var vertexCount: GLint = 0
     var indexCount: GLint = 0
     
