@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7809C7F4234D9D5D009F980E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C7F3234D9D5D009F980E /* AppDelegate.swift */; };
+		7809C7F6234D9D5D009F980E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C7F5234D9D5D009F980E /* SceneDelegate.swift */; };
+		7809C7F8234D9D5D009F980E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C7F7234D9D5D009F980E /* ViewController.swift */; };
+		7809C7FB234D9D5D009F980E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7809C7F9234D9D5D009F980E /* Main.storyboard */; };
+		7809C7FD234D9D5F009F980E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7809C7FC234D9D5F009F980E /* Assets.xcassets */; };
+		7809C800234D9D5F009F980E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7809C7FE234D9D5F009F980E /* LaunchScreen.storyboard */; };
+		7809C80B234D9D60009F980E /* _60VideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C80A234D9D60009F980E /* _60VideoTests.swift */; };
+		7809C817234DA4C4009F980E /* vertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7809C816234DA4C4009F980E /* vertexShader.glsl */; };
+		7809C819234DA56B009F980E /* fragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7809C818234DA56B009F980E /* fragmentShader.glsl */; };
+		7809C81C234DA602009F980E /* GLKMatrix4+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C81B234DA602009F980E /* GLKMatrix4+Conversions.swift */; };
+		7809C81E234DA6C6009F980E /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C81D234DA6C6009F980E /* Sphere.swift */; };
+		7809C823234DA831009F980E /* esShapes.c in Sources */ = {isa = PBXBuildFile; fileRef = 7809C822234DA831009F980E /* esShapes.c */; };
+		7809C825234DAC52009F980E /* Shader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C824234DAC52009F980E /* Shader.swift */; };
+		7809C827234DB6FC009F980E /* GLProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C826234DB6FC009F980E /* GLProgram.swift */; };
+		7809C82A234DBB79009F980E /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7809C829234DBB79009F980E /* Renderer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7809C807234D9D60009F980E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7809C7E8234D9D5D009F980E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7809C7EF234D9D5D009F980E;
+			remoteInfo = 360Video;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7809C7F0234D9D5D009F980E /* 360Video.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 360Video.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7809C7F3234D9D5D009F980E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7809C7F5234D9D5D009F980E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7809C7F7234D9D5D009F980E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7809C7FA234D9D5D009F980E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7809C7FC234D9D5F009F980E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7809C7FF234D9D5F009F980E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7809C801234D9D5F009F980E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7809C806234D9D60009F980E /* 360VideoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 360VideoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7809C80A234D9D60009F980E /* _60VideoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _60VideoTests.swift; sourceTree = "<group>"; };
+		7809C80C234D9D60009F980E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7809C816234DA4C4009F980E /* vertexShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertexShader.glsl; sourceTree = "<group>"; };
+		7809C818234DA56B009F980E /* fragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragmentShader.glsl; sourceTree = "<group>"; };
+		7809C81B234DA602009F980E /* GLKMatrix4+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GLKMatrix4+Conversions.swift"; sourceTree = "<group>"; };
+		7809C81D234DA6C6009F980E /* Sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
+		7809C820234DA830009F980E /* 360Video-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "360Video-Bridging-Header.h"; sourceTree = "<group>"; };
+		7809C821234DA831009F980E /* esShapes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = esShapes.h; sourceTree = "<group>"; };
+		7809C822234DA831009F980E /* esShapes.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = esShapes.c; sourceTree = "<group>"; };
+		7809C824234DAC52009F980E /* Shader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shader.swift; sourceTree = "<group>"; };
+		7809C826234DB6FC009F980E /* GLProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProgram.swift; sourceTree = "<group>"; };
+		7809C829234DBB79009F980E /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7809C7ED234D9D5D009F980E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7809C803234D9D60009F980E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7809C7E7234D9D5D009F980E = {
+			isa = PBXGroup;
+			children = (
+				7809C7F2234D9D5D009F980E /* 360Video */,
+				7809C809234D9D60009F980E /* 360VideoTests */,
+				7809C7F1234D9D5D009F980E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7809C7F1234D9D5D009F980E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7809C7F0234D9D5D009F980E /* 360Video.app */,
+				7809C806234D9D60009F980E /* 360VideoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7809C7F2234D9D5D009F980E /* 360Video */ = {
+			isa = PBXGroup;
+			children = (
+				7809C828234DBB62009F980E /* Render */,
+				7809C81F234DA75E009F980E /* Model */,
+				7809C81A234DA5CD009F980E /* Extension */,
+				7809C815234DA4AA009F980E /* Shader */,
+				7809C7F3234D9D5D009F980E /* AppDelegate.swift */,
+				7809C7F5234D9D5D009F980E /* SceneDelegate.swift */,
+				7809C7F7234D9D5D009F980E /* ViewController.swift */,
+				7809C820234DA830009F980E /* 360Video-Bridging-Header.h */,
+				7809C7F9234D9D5D009F980E /* Main.storyboard */,
+				7809C7FC234D9D5F009F980E /* Assets.xcassets */,
+				7809C7FE234D9D5F009F980E /* LaunchScreen.storyboard */,
+				7809C801234D9D5F009F980E /* Info.plist */,
+			);
+			path = 360Video;
+			sourceTree = "<group>";
+		};
+		7809C809234D9D60009F980E /* 360VideoTests */ = {
+			isa = PBXGroup;
+			children = (
+				7809C80A234D9D60009F980E /* _60VideoTests.swift */,
+				7809C80C234D9D60009F980E /* Info.plist */,
+			);
+			path = 360VideoTests;
+			sourceTree = "<group>";
+		};
+		7809C815234DA4AA009F980E /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				7809C816234DA4C4009F980E /* vertexShader.glsl */,
+				7809C818234DA56B009F980E /* fragmentShader.glsl */,
+				7809C824234DAC52009F980E /* Shader.swift */,
+				7809C826234DB6FC009F980E /* GLProgram.swift */,
+			);
+			path = Shader;
+			sourceTree = "<group>";
+		};
+		7809C81A234DA5CD009F980E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7809C81B234DA602009F980E /* GLKMatrix4+Conversions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		7809C81F234DA75E009F980E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7809C81D234DA6C6009F980E /* Sphere.swift */,
+				7809C821234DA831009F980E /* esShapes.h */,
+				7809C822234DA831009F980E /* esShapes.c */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7809C828234DBB62009F980E /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				7809C829234DBB79009F980E /* Renderer.swift */,
+			);
+			path = Render;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7809C7EF234D9D5D009F980E /* 360Video */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7809C80F234D9D60009F980E /* Build configuration list for PBXNativeTarget "360Video" */;
+			buildPhases = (
+				7809C7EC234D9D5D009F980E /* Sources */,
+				7809C7ED234D9D5D009F980E /* Frameworks */,
+				7809C7EE234D9D5D009F980E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 360Video;
+			productName = 360Video;
+			productReference = 7809C7F0234D9D5D009F980E /* 360Video.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7809C805234D9D60009F980E /* 360VideoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7809C812234D9D60009F980E /* Build configuration list for PBXNativeTarget "360VideoTests" */;
+			buildPhases = (
+				7809C802234D9D60009F980E /* Sources */,
+				7809C803234D9D60009F980E /* Frameworks */,
+				7809C804234D9D60009F980E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7809C808234D9D60009F980E /* PBXTargetDependency */,
+			);
+			name = 360VideoTests;
+			productName = 360VideoTests;
+			productReference = 7809C806234D9D60009F980E /* 360VideoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7809C7E8234D9D5D009F980E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = HanGyoJeong;
+				TargetAttributes = {
+					7809C7EF234D9D5D009F980E = {
+						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
+					};
+					7809C805234D9D60009F980E = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 7809C7EF234D9D5D009F980E;
+					};
+				};
+			};
+			buildConfigurationList = 7809C7EB234D9D5D009F980E /* Build configuration list for PBXProject "360Video" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7809C7E7234D9D5D009F980E;
+			productRefGroup = 7809C7F1234D9D5D009F980E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7809C7EF234D9D5D009F980E /* 360Video */,
+				7809C805234D9D60009F980E /* 360VideoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7809C7EE234D9D5D009F980E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7809C819234DA56B009F980E /* fragmentShader.glsl in Resources */,
+				7809C800234D9D5F009F980E /* LaunchScreen.storyboard in Resources */,
+				7809C7FD234D9D5F009F980E /* Assets.xcassets in Resources */,
+				7809C817234DA4C4009F980E /* vertexShader.glsl in Resources */,
+				7809C7FB234D9D5D009F980E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7809C804234D9D60009F980E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7809C7EC234D9D5D009F980E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7809C825234DAC52009F980E /* Shader.swift in Sources */,
+				7809C81E234DA6C6009F980E /* Sphere.swift in Sources */,
+				7809C7F8234D9D5D009F980E /* ViewController.swift in Sources */,
+				7809C7F4234D9D5D009F980E /* AppDelegate.swift in Sources */,
+				7809C81C234DA602009F980E /* GLKMatrix4+Conversions.swift in Sources */,
+				7809C827234DB6FC009F980E /* GLProgram.swift in Sources */,
+				7809C7F6234D9D5D009F980E /* SceneDelegate.swift in Sources */,
+				7809C82A234DBB79009F980E /* Renderer.swift in Sources */,
+				7809C823234DA831009F980E /* esShapes.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7809C802234D9D60009F980E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7809C80B234D9D60009F980E /* _60VideoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7809C808234D9D60009F980E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7809C7EF234D9D5D009F980E /* 360Video */;
+			targetProxy = 7809C807234D9D60009F980E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7809C7F9234D9D5D009F980E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7809C7FA234D9D5D009F980E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7809C7FE234D9D5F009F980E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7809C7FF234D9D5F009F980E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7809C80D234D9D60009F980E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7809C80E234D9D60009F980E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7809C810234D9D60009F980E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KYV3CSY2F3;
+				INFOPLIST_FILE = 360Video/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.hangyojeong.-60Video";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "360Video/360Video-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7809C811234D9D60009F980E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KYV3CSY2F3;
+				INFOPLIST_FILE = 360Video/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.hangyojeong.-60Video";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "360Video/360Video-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7809C813234D9D60009F980E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KYV3CSY2F3;
+				INFOPLIST_FILE = 360VideoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.hangyojeong.-60VideoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/360Video.app/360Video";
+			};
+			name = Debug;
+		};
+		7809C814234D9D60009F980E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KYV3CSY2F3;
+				INFOPLIST_FILE = 360VideoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.hangyojeong.-60VideoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/360Video.app/360Video";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7809C7EB234D9D5D009F980E /* Build configuration list for PBXProject "360Video" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7809C80D234D9D60009F980E /* Debug */,
+				7809C80E234D9D60009F980E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7809C80F234D9D60009F980E /* Build configuration list for PBXNativeTarget "360Video" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7809C810234D9D60009F980E /* Debug */,
+				7809C811234D9D60009F980E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7809C812234D9D60009F980E /* Build configuration list for PBXNativeTarget "360VideoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7809C813234D9D60009F980E /* Debug */,
+				7809C814234D9D60009F980E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7809C7E8234D9D5D009F980E /* Project object */;
+}
