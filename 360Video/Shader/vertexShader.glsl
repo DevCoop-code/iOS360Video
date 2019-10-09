@@ -1,3 +1,5 @@
+#version 300 es
+
 uniform mat4 modelViewProjectionMatrix;
 
 in vec4 position;
