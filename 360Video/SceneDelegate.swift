@@ -9,8 +9,8 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
-    //var window: UIWindow?
+    
+    var window: UIWindow?
 
 
     @available(iOS 13.0, *)
