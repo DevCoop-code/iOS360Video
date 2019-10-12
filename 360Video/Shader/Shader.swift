@@ -16,8 +16,8 @@ class Shader{
     var texCoord = GLuint()
     var modelViewProjectionMatrix = GLint()
     
-//    var samplerY = GLuint()
-//    var samplerUV = GLuint()
+    var samplerY = GLuint()
+    var samplerUV = GLuint()
     
     init(){
         let glProgram = GLProgram()
@@ -31,7 +31,7 @@ class Shader{
         glEnableVertexAttribArray(texCoord)
         modelViewProjectionMatrix = GLint(glGetUniformLocation(program, "modelViewProjectionMatrix"))
         
-//        samplerY = GLuint(glGetUniformLocation(program, "samplerY"))
-//        samplerUV = GLuint(glGetUniformLocation(program, "samplerUV"))
+        samplerY = GLuint(glGetUniformLocation(program, "samplerY"))
+        samplerUV = GLuint(glGetUniformLocation(program, "samplerUV"))
     }
 }

@@ -61,8 +61,8 @@ class Renderer{
         glUniformMatrix4fv(shader.modelViewProjectionMatrix, 1, GLboolean(GL_FALSE), modelViewProjectionMatrix.array)
         
         //Set the values of samplerY and samplerUV before rendering
-//        glUniform1i(GLint(shader.samplerY), 0)
-//        glUniform1i(GLint(shader.samplerUV), 1)
+        glUniform1i(GLint(shader.samplerY), 0)
+        glUniform1i(GLint(shader.samplerUV), 1)
         
         glBindVertexArray(vertexArray)
         glDrawElements(GLenum(GL_TRIANGLES), GLsizei(model.indexCount), GLenum(GL_UNSIGNED_SHORT), nil)
