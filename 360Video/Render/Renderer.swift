@@ -60,18 +60,21 @@ class Renderer{
         glBindVertexArray(0)
     }
     
-    func updateModelViewProjectionMatrix(){
+    func updateModelViewProjectionMatrix(_ rotationX: Float, _ rotationY: Float){
         let aspect = abs(Float(UIScreen.main.bounds.size.width) / Float(UIScreen.main.bounds.size.height))
         let nearZ: Float = 0.1
         let farZ: Float = 100.0
         
-        let projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(fieldOfView), aspect, nearZ, farZ)
+        let fieldOfViewInRadians = GLKMathDegreesToRadians(fieldOfView)
+        let projectionMatrix = GLKMatrix4MakePerspective(fieldOfViewInRadians, aspect, nearZ, farZ)
         
+        //Apply the finger rotation in X-axis & Y-axis to the model view matrix
         var modelViewMatrix = GLKMatrix4Identity
         modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0.0, 0.0, -2.0)
-        degree += 0.0002
-        let rotateY = Float((sin(degree) + 1.0) / 2.0 * 360.0)
-        modelViewMatrix = GLKMatrix4RotateY(modelViewMatrix, rotateY)
+        modelViewMatrix = GLKMatrix4RotateX(modelViewMatrix, rotationX)
+        modelViewMatrix = GLKMatrix4RotateY(modelViewMatrix, rotationY)
+        //degree += 0.0002
+        //let rotateY = Float((sin(degree) + 1.0) / 2.0 * 360.0)
         
         modelViewProjectionMatrix = GLKMatrix4Multiply(projectionMatrix, modelViewMatrix)
     }

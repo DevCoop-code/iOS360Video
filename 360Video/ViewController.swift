@@ -13,6 +13,9 @@ class ViewController: GLKViewController {
     var renderer: Renderer?
     var videoPlayer: VideoPlayer?
     
+    private var rotationX: Float = 0.0
+    private var rotationY: Float = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,11 +49,30 @@ class ViewController: GLKViewController {
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
         renderer?.render()
     }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //For getting the touch distance in X-axis and Y-axis
+        let radiansPerPoint: Float = 0.005
+        let touch = touches.first!
+        let location = touch.location(in: touch.view)
+        let previousLocation = touch.previousLocation(in: touch.view)
+        var diffX = Float(location.x - previousLocation.x)
+        var diffY = Float(location.y - previousLocation.y)
+        
+        //For every pixel the user drags, rotate the sphere 0.005 radians
+        diffX *= -radiansPerPoint
+        diffY *= -radiansPerPoint
+        
+        //X-axis is horizontal across / Y-axis is vertical
+        //user drags from left to right(diffX) actually want to rotate around the y axis(rotationY) and vice versa
+        rotationX += diffY
+        rotationY += diffX
+    }
 }
 
 //MARK: - GLKViewControllerDelegate
 extension ViewController: GLKViewControllerDelegate{
     func glkViewControllerUpdate(_ controller: GLKViewController){
-        renderer?.updateModelViewProjectionMatrix()
+        renderer?.updateModelViewProjectionMatrix(rotationX, rotationY)
     }
 }
