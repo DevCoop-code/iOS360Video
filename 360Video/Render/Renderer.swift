@@ -30,6 +30,11 @@ class Renderer{
     var modelViewProjectionMatrix = GLKMatrix4Identity
     var degree: Float = 0
     
+    //Texture
+    var lumaTexture: CVOpenGLESTexture?
+    var chromaTexture: CVOpenGLESTexture?
+    var videoTextureCache: CVOpenGLESTextureCache?
+    
     init(context: EAGLContext, shader: Shader, model: Sphere){
         self.context = context
         self.shader = shader
@@ -55,6 +60,10 @@ class Renderer{
         //Uniforms
         glUniformMatrix4fv(shader.modelViewProjectionMatrix, 1, GLboolean(GL_FALSE), modelViewProjectionMatrix.array)
         
+        //Set the values of samplerY and samplerUV before rendering
+//        glUniform1i(GLint(shader.samplerY), 0)
+//        glUniform1i(GLint(shader.samplerUV), 1)
+        
         glBindVertexArray(vertexArray)
         glDrawElements(GLenum(GL_TRIANGLES), GLsizei(model.indexCount), GLenum(GL_UNSIGNED_SHORT), nil)
         glBindVertexArray(0)
@@ -70,7 +79,8 @@ class Renderer{
         
         //Apply the finger rotation in X-axis & Y-axis to the model view matrix
         var modelViewMatrix = GLKMatrix4Identity
-        modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0.0, 0.0, -2.0)
+        //Comment below line accurs translate your location to sphere's center
+        //modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0.0, 0.0, -2.0)
         modelViewMatrix = GLKMatrix4RotateX(modelViewMatrix, rotationX)
         modelViewMatrix = GLKMatrix4RotateY(modelViewMatrix, rotationY)
         //degree += 0.0002
@@ -117,6 +127,85 @@ class Renderer{
         glBindBuffer(GLenum(GL_ARRAY_BUFFER), 0)
         glBindBuffer(GLenum(GL_ELEMENT_ARRAY_BUFFER), 0)
         
+    }
+    
+    func updateTexture(_ pixelBuffer: CVPixelBuffer){
+        //Create the CVOpenGLESTextureCache if it's not exist
+        if videoTextureCache == nil{
+            let result = CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, nil, context, nil, &videoTextureCache)
+            if result != kCVReturnSuccess{
+                print("create CVOpenGLESTextureCacheCreate failure")
+                return
+            }
+        }
+        
+        let textureWidth = GLsizei(CVPixelBufferGetWidth(pixelBuffer))
+        let textureHeight = GLsizei(CVPixelBufferGetHeight(pixelBuffer))
+        
+        var result: CVReturn
+        
+        //Delete current textures
+        cleanTextures()
+        
+        //Mapping the luma plane of a 420v buffer as a source texture
+        glActiveTexture(GLenum(GL_TEXTURE0))
+        result = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
+                                                              videoTextureCache!,
+                                                              pixelBuffer,
+                                                              nil,
+                                                              GLenum(GL_TEXTURE_2D),
+                                                              GL_LUMINANCE,
+                                                              textureWidth,
+                                                              textureHeight,
+                                                              GLenum(GL_LUMINANCE),
+                                                              GLenum(GL_UNSIGNED_BYTE),
+                                                              0,
+                                                              &lumaTexture)
+        if result != kCVReturnSuccess {
+            print("[lumaTexture]Create CVOpenGLESTextureCacheCreateTextureFromImage failure %d", result)
+            return
+        }
+        glBindTexture(CVOpenGLESTextureGetTarget(lumaTexture!), CVOpenGLESTextureGetName(lumaTexture!))
+        glTexParameteri(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_MIN_FILTER), GL_LINEAR)
+        glTexParameteri(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_MAG_FILTER), GL_LINEAR)
+        glTexParameterf(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_WRAP_S), GLfloat(GL_CLAMP_TO_EDGE))
+        glTexParameterf(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_WRAP_T), GLfloat(GL_CLAMP_TO_EDGE))
+        
+        //Mapping the chroma plane of a 420v buffer as a source texture
+        glActiveTexture(GLenum(GL_TEXTURE1))
+        result = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
+                                                              videoTextureCache!,
+                                                              pixelBuffer,
+                                                              nil,
+                                                              GLenum(GL_TEXTURE_2D),
+                                                              GL_LUMINANCE_ALPHA,
+                                                              textureWidth / 2,
+                                                              textureHeight / 2,
+                                                              GLenum(GL_LUMINANCE_ALPHA),
+                                                              GLenum(GL_UNSIGNED_BYTE),
+                                                              1,
+                                                              &chromaTexture)
+        if result != kCVReturnSuccess{
+            print("[chromaTexture]Create CVOpenGLESTextureCacheCreateTextureFromImage failure %d", result)
+            return
+        }
+        glBindTexture(CVOpenGLESTextureGetTarget(chromaTexture!), CVOpenGLESTextureGetName(chromaTexture!))
+        glTexParameteri(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_MIN_FILTER), GL_LINEAR)
+        glTexParameteri(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_MAG_FILTER), GL_LINEAR)
+        glTexParameterf(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_WRAP_S), GLfloat(GL_CLAMP_TO_EDGE))
+        glTexParameterf(GLenum(GL_TEXTURE_2D), GLenum(GL_TEXTURE_WRAP_T), GLfloat(GL_CLAMP_TO_EDGE))
+    }
+    
+    private func cleanTextures(){
+        if lumaTexture != nil{
+            lumaTexture = nil
+        }
+        if chromaTexture != nil{
+            chromaTexture = nil
+        }
+        if let videoTextureCache = videoTextureCache{
+            CVOpenGLESTextureCacheFlush(videoTextureCache, 0)
+        }
     }
     
     private func deleteVBO(){

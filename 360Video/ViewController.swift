@@ -47,6 +47,12 @@ class ViewController: GLKViewController {
     }
     
     override func glkView(_ view: GLKView, drawIn rect: CGRect) {
+        //Retrieve the video pixel buffer
+        guard let pixelBuffer = videoPlayer?.retrievePixelBuffer() else {
+            return
+        }
+        //Update the OpenGL ES texture by using the current video pixel buffer
+        renderer?.updateTexture(pixelBuffer)
         renderer?.render()
     }
     
